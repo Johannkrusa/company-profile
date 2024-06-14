@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import './page.css';
+import Image from 'next/image';
 
 export default function AboutUsPage() {
     return (
@@ -15,7 +16,7 @@ export default function AboutUsPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">LET'S CREATE THINGS</h1>
+            <h1 className="text-5xl font-bold mb-4">LET`S CREATE THINGS</h1>
             <p className="text-lg mb-6">あなたの作品をもっと個性的に彩りたい</p>
             <div className="flex space-x-4">
               <button className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded">通販</button>
@@ -58,7 +59,7 @@ export default function AboutUsPage() {
                   <h2 className="text-xl font-semibold text-gray-800 mb-4">Culture</h2>
                   <p className="text-gray-700">
                     Our company was founded in 2010 by a group of passionate engineers with a mission to revolutionize the typing experience. Since then, we have been dedicated to designing and manufacturing high-quality keyboards that enhance productivity and comfort for our customers.
-                    Over the years, we have grown from a small startup to a recognized leader in the keyboard industry, continually innovating and pushing the boundaries of what's possible in keyboard design.
+                    Over the years, we have grown from a small startup to a recognized leader in the keyboard industry, continually innovating and pushing the boundaries of what`s possible in keyboard design.
                   </p>
                 </div>
             </div>
@@ -96,7 +97,7 @@ function TeamsSection({ page }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-10">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <img
+              <Image
                 src={member.picture.large}
                 alt={`Team Member ${index + 1}`}
                 className="rounded-full mx-auto mb-2"

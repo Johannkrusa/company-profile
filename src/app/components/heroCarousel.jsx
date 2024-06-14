@@ -1,6 +1,7 @@
     import React, { useState, useEffect } from 'react';
     import './heroCarousel.css'; 
     import Link from 'next/link';
+    import Image from 'next/image';
 
     const images = [
     "https://ucarecdn.com/5cb912ed-ccdd-4e7c-bc93-9eb1af3d5642/-/format/auto/-/preview/3000x3000/-/quality/lighter/Zoom75_Keycap_BlueOasis_02.png",
@@ -36,7 +37,7 @@
             <div className="flex" style={{ width: `${images.length * 100}%`, transform: `translateX(-${currentIndex * (100 / images.length)}%)` }}>
             {images.map((image, index) => (
                 <div key={index} className="w-full flex-shrink-0 relative" style={{ flex: `0 0 ${100 / images.length}%` }}>
-                <img src={image} alt={`Slide ${index}`} className="w-full" />
+                <Image src={image} alt={`Slide ${index}`} className="w-full" />
                 <div className="overlay"></div>
                 </div>
             ))}

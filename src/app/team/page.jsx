@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import './page.css'
+import Image from 'next/image';
 
 export default function TeamPage() {
     const jobPositions = ["CEO", "CO-OWNER", "LEAD DESIGNER", "OPERATION MANAGER", "HR MANAGER", "POKEMON MASTER", "MARKETING MANAGER", "SUPERVISOR"];
@@ -59,7 +60,7 @@ export default function TeamPage() {
                                 className="bg-white p-6 rounded-lg shadow-md"
                                 variants={itemVariants}
                             >
-                                <img
+                                <Image
                                     src={member.picture.large}
                                     alt={`Team Member ${index + 1}`}
                                     className="rounded-full mx-auto mb-2 mt-5"

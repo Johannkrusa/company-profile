@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import HeroCarousel from '../components/heroCarousel';
+import Image from 'next/image';
 import './page.css';
 
 export default function HomePage() {
@@ -60,7 +61,7 @@ export default function HomePage() {
 function SectionWithImage({ imageUrl, title }) {
   return (
     <div className="relative h-[440px] overflow-hidden mt-20">
-      <img
+      <Image
         src={imageUrl}
         alt={title}
         className="object-cover w-full h-full"
@@ -80,7 +81,7 @@ function ProductGrid({ products, textColor, page }) {
       <div className="grid grid-cols-4 gap-4">
         {products.map((product, index) => (
           <div key={index} className="relative bg-white">
-            <img src={product.imageUrl} alt={product.name} className="w-full" />
+            <Image src={product.imageUrl} alt={product.name} className="w-full" />
             <div className={`absolute bottom-0 left-0 right-0 text-${textColor} px-6 py-4`}>
               <span className="text-md">{product.name}</span>
             </div>
@@ -146,7 +147,7 @@ function HistoryAndCultureSection({ page }) {
         </div>
         {images.map((image, index) => (
           <div key={index} className="bg-white shadow-md overflow-hidden">
-            <img
+            <Image
               src={image}
               alt={`Image ${index}`}
               className="object-cover h-64 md:h-full w-full"
@@ -156,7 +157,7 @@ function HistoryAndCultureSection({ page }) {
         <div className="bg-white p-6 shadow-md h-[250px]">
           <h2 className="md:mt-0 text-xl font-semibold text-gray-800 mb-4">Culture</h2>
           <p className="text-gray-700">
-            Over the years, we have grown from a small startup to a recognized leader in the keyboard industry, continually innovating and pushing the boundaries of what's possible in keyboard design.
+            Over the years, we have grown from a small startup to a recognized leader in the keyboard industry, continually innovating and pushing the boundaries of what`s possible in keyboard design.
           </p>
           <p>
             Hello
@@ -198,7 +199,7 @@ function TeamsSection({ page }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-10">
         {teamMembers.map((member, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-            <img
+            <Image
               src={member.picture.large}
               alt={`Team Member ${index + 1}`}
               className="rounded-full mx-auto mb-2"
@@ -248,13 +249,13 @@ function TestimonySection() {
   return (
     <div className="bg-gray-100 p-6 md:p-12">
       <div className="text-center mb-12 md:mb-20">
-        <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Customer's Testimonies</h1>
+        <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Customer`s Testimonies</h1>
       </div>
       <div className="grid grid-cols-1 gap-8 mx-10">
         {testimonies.map((item, index) => (
           <div key={index} className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
             <div className="bg-white shadow-lg p-6 rounded-lg">
-              <p className="text-lg mb-4">"{item.quote}"</p>
+              <p className="text-lg mb-4">`{item.quote}`</p>
               <p className="text-md font-bold">- {item.name}</p>
             </div>
           </div>
