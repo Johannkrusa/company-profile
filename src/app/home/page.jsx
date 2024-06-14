@@ -64,8 +64,8 @@ function SectionWithImage({ imageUrl, title }) {
       <Image
         src={imageUrl}
         alt={title}
-        className="object-cover w-full h-full"
-        style={{ objectFit: 'cover' }}
+        layout="fill"
+        objectFit="cover"
       />
       <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold">
         {title}
@@ -81,7 +81,7 @@ function ProductGrid({ products, textColor, page }) {
       <div className="grid grid-cols-4 gap-4">
         {products.map((product, index) => (
           <div key={index} className="relative bg-white">
-            <Image src={product.imageUrl} alt={product.name} className="w-full" />
+            <Image src={product.imageUrl} alt={product.name} width={500} height={500} className="w-full" />
             <div className={`absolute bottom-0 left-0 right-0 text-${textColor} px-6 py-4`}>
               <span className="text-md">{product.name}</span>
             </div>
@@ -133,8 +133,7 @@ function HistoryAndCultureSection({ page }) {
   ];
 
   return (
-    <div className="bg-gray
--100 p-6 md:p-12 min-h-screen">
+    <div className="bg-gray-100 p-6 md:p-12 min-h-screen">
       <div className="text-center mt-10 mb-12 md:mb-20">
         <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">History & Culture</h1>
       </div>
@@ -150,6 +149,8 @@ function HistoryAndCultureSection({ page }) {
             <Image
               src={image}
               alt={`Image ${index}`}
+              width={500}
+              height={500}
               className="object-cover h-64 md:h-full w-full"
             />
           </div>
@@ -164,7 +165,7 @@ function HistoryAndCultureSection({ page }) {
           </p>
         </div>
       </div>
-      <Link href={`${page}`} className="flex justify-center mt-6 md:justify-end mx-4 md:mx-10">
+      <Link href={page} className="flex justify-center mt-6 md:justify-end mx-4 md:mx-10">
         <button className="bg-white text-gray px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
           Read More
         </button>
@@ -202,8 +203,9 @@ function TeamsSection({ page }) {
             <Image
               src={member.picture.large}
               alt={`Team Member ${index + 1}`}
+              width={150}
+              height={150}
               className="rounded-full mx-auto mb-2"
-              style={{ width: '150px', height: '150px' }}
             />
             <div className="text-center">
               <span className="block font-semibold">{`${member.name.first} ${member.name.last}`}</span>
@@ -212,7 +214,7 @@ function TeamsSection({ page }) {
           </div>
         ))}
       </div>
-      <Link href={`${page}`} className="flex justify-center mt-6 md:justify-end mx-4 md:mx-10">
+      <Link href={page} className="flex justify-center mt-6 md:justify-end mx-4 md:mx-10">
         <button className="bg-white text-gray-800 px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
           Read More
         </button>
@@ -255,7 +257,7 @@ function TestimonySection() {
         {testimonies.map((item, index) => (
           <div key={index} className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
             <div className="bg-white shadow-lg p-6 rounded-lg">
-              <p className="text-lg mb-4">`{item.quote}`</p>
+              <p className="text-lg mb-4">{item.quote}</p>
               <p className="text-md font-bold">- {item.name}</p>
             </div>
           </div>

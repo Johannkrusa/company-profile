@@ -101,7 +101,8 @@ function TeamsSection({ page }) {
                 src={member.picture.large}
                 alt={`Team Member ${index + 1}`}
                 className="rounded-full mx-auto mb-2"
-                style={{ width: '150px', height: '150px' }}
+                width={150}
+                height={150}
               />
               <div className="text-center">
                 <span className="block font-semibold">{`${member.name.first} ${member.name.last}`}</span>

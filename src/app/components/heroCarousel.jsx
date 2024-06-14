@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './heroCarousel.css'; 
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,11 +13,11 @@ const images = [
 const HeroCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const goToPrevious = () => {
+    const goToPrevious = useCallback(() => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
-    };
+    }, [currentIndex]);
 
     const goToNext = useCallback(() => {
         const isLastSlide = currentIndex === images.length - 1;
@@ -37,15 +36,15 @@ const HeroCarousel = () => {
                 <div className="flex" style={{ width: `${images.length * 100}%`, transform: `translateX(-${currentIndex * (100 / images.length)}%)` }}>
                     {images.map((image, index) => (
                         <div key={index} className="w-full flex-shrink-0 relative" style={{ flex: `0 0 ${100 / images.length}%` }}>
-                            <Image src={image} alt={`Slide ${index}`} className="w-full" />
+                            <Image src={image} alt={`Slide ${index}`} width={1650} height={1000} />
                             <div className="overlay"></div>
                         </div>
                     ))}
                 </div>
             </div>
-            <button className="absolute align-middle justify-center left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToPrevious}>‹</button>
-            <button className="absolute align-middle justify-center right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToNext}>›</button>
-            <div className="absolute bottom-[200px] left-[100px] text-white p-4 flex flex-col items-center">
+            <button className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToPrevious}>‹</button>
+            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToNext}>›</button>
+            <div className="absolute bottom-[170px] left-20 text-white p-4 flex flex-col items-center">
                 <h1 className="text-5xl font-bold">Productivity at its</h1>
                 <h1 className='text-4xl font-bold'>Maximum</h1>
                 <Link href="/product">

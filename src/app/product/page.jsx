@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ProductPage() {
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -146,10 +147,12 @@ export default function ProductPage() {
                             className="bg-white shadow-md rounded overflow-hidden"
                             variants={itemVariants}
                         >
-                            <img
+                            <Image
                                 src={product.image}
                                 alt={`Image of ${product.name}`}
                                 className="object-cover h-64 w-full"
+                                width={400}
+                                height={400}
                             />
                             <div className="p-4">
                                 <div className="font-semibold">{product.name}</div>
