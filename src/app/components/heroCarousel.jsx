@@ -45,10 +45,12 @@ const HeroCarousel = () => {
             <button className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToPrevious}>‹</button>
             <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-md px-5 py-7 text-2xl" onClick={goToNext}>›</button>
             <div className="absolute bottom-[170px] left-20 text-white p-4 flex flex-col items-center">
-                <h1 className="text-5xl font-bold">Productivity at its</h1>
-                <h1 className='text-4xl font-bold'>Maximum</h1>
+                <h1 className="text-5xl font-bold">DESKTOP ART CREATOR</h1>
+                <h1 className='text-2xl font-semibold text-gray-100 mt-4'>-- Explore Our Keyboards --</h1>
                 <Link href="/product">
-                    <button className="button mt-8 bg-white text-black px-8 py-4 rounded">Know More</button>
+                <button className="mt-4 bg-white text-black border-transparent border px-8 py-4 rounded hover:bg-gray-200 hover:border-gray-600">
+                    Know More
+                </button>
                 </Link>
             </div>
         </div>

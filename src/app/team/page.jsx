@@ -45,12 +45,12 @@ export default function TeamPage() {
         <div className="bg-gray-100 min-h-screen">
             <div className="p-6 md:p-12">
                 <div className="text-center mt-10 mb-12 md:mb-20">
-                    <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Meet Our Teams</h1>
+                    <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Meet The Team</h1>
                 </div>
                 {loading ? (
                     <div></div>
                 ) : (
-                    <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 mx-4 md:mx-10"
+                    <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mx-4 md:mx-10"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"

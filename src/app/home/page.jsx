@@ -7,6 +7,7 @@ import HeroCarousel from '../components/heroCarousel';
 import Image from 'next/image';
 import './page.css';
 
+
 export default function HomePage() {
   return (
     <div className="body bg-gray-100">
@@ -42,7 +43,7 @@ export default function HomePage() {
         />
 
         {/* More Products Grid */}
-        <ProductGrid products={switchProducts} textColor="black" page="/product" />
+        <ProductGrid products={switchProducts} textColor="gray-700" page="/product" />
 
         {/* History & Culture Section */}
         <HistoryAndCultureSection page="/about-us" />
@@ -90,7 +91,7 @@ function ProductGrid({ products, textColor, page }) {
       </div>
       <div className="flex justify-end mt-5 mx-0">
         <Link href={page}>
-          <button className="bg-white text-gray-800 px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
+          <button className="bg-white text-gray-700 px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
             View More
           </button>
         </Link>
@@ -124,12 +125,12 @@ const switchProducts = [
 // Component for History & Culture section
 function HistoryAndCultureSection({ page }) {
   const images = [
-    "https://meletrix.com/cdn/shop/files/11_df1d4267-a61d-4a91-aab6-86bb16d30804_1024x1024.jpg?v=1696779108",
-    "https://ucarecdn.com/6a8715f3-0b97-4ca8-ab8c-f6c17678f225/-/format/auto/-/preview/3000x3000/-/quality/lighter/75%20update_1_.png",
-    "https://meletrix.com/cdn/shop/files/10_c242facb-5541-4c6b-9fe3-77bda7c8195c.jpg?v=1710236640&width=1800",
-    "https://meletrix.com/cdn/shop/files/11_df1d4267-a61d-4a91-aab6-86bb16d30804_1024x1024.jpg?v=1696779108",
-    "https://ucarecdn.com/6a8715f3-0b97-4ca8-ab8c-f6c17678f225/-/format/auto/-/preview/3000x3000/-/quality/lighter/75%20update_1_.png",
-    "https://meletrix.com/cdn/shop/files/10_c242facb-5541-4c6b-9fe3-77bda7c8195c.jpg?v=1710236640&width=1800"
+    "https://meletrix.com/cdn/shop/files/4_9fac2eef-f0b1-405b-95b0-5053391c99ef.jpg?v=1698903478&width=1000",
+    "https://meletrix.com/cdn/shop/files/6_1_ef28b394-7466-462b-bc4e-1a557c559441.jpg?v=1698904156&width=1000",
+    "https://meletrix.com/cdn/shop/files/3_8b4003cb-c8e4-4f85-8e8b-689a3cf8d95a.jpg?v=1698904359&width=1000",
+    "https://meletrix.com/cdn/shop/files/1_21524e5e-98ac-4f4c-b20b-6c34ce2bed31.jpg?v=1716447304&width=1000",
+    "https://meletrix.com/cdn/shop/files/DSC03403.jpg?v=1698905912&width=1000",
+    "https://meletrix.com/cdn/shop/products/7_b52ae3fa-faef-45b4-aed0-92c9312bec4a_1024x1024.jpg?v=1680458032"
   ];
 
   return (
@@ -141,9 +142,10 @@ function HistoryAndCultureSection({ page }) {
         <div className="bg-white p-6 shadow-md">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">History</h2>
           <p className="text-gray-700">
-            Our company was founded in 2010 by a group of passionate engineers with a mission to revolutionize the typing experience. Since then, we have been dedicated to designing and manufacturing high-quality keyboards that enhance productivity and comfort for our customers.
+             Born from the passion and creativity of Wuque Studio, Meletrix carries the same core DNA that made some of the most popular boards in the enthusiast community. Dedicated to offering more enthusiast-level mechanical keyboards, Meletrix aims to bring the best keyboards to everyone.
           </p>
         </div>
+  
         {images.map((image, index) => (
           <div key={index} className="bg-white shadow-md overflow-hidden">
             <Image
@@ -155,18 +157,15 @@ function HistoryAndCultureSection({ page }) {
             />
           </div>
         ))}
-        <div className="bg-white p-6 shadow-md h-[250px]">
+        <div className="bg-white p-6 shadow-md h-[auto]">
           <h2 className="md:mt-0 text-xl font-semibold text-gray-800 mb-4">Culture</h2>
           <p className="text-gray-700">
-            Over the years, we have grown from a small startup to a recognized leader in the keyboard industry, continually innovating and pushing the boundaries of what`s possible in keyboard design.
-          </p>
-          <p>
-            Hello
+          Our company promotes a collaborative and inclusive environment where everyone can be their true selves. We prioritize continuous learning, open communication, and mutual respect, ensuring every team member feels valued and empowered to share their unique talents.
           </p>
         </div>
       </div>
       <Link href={page} className="flex justify-center mt-6 md:justify-end mx-4 md:mx-10">
-        <button className="bg-white text-gray px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
+        <button className="bg-white text-gray-700 px-6 py-3 border border-transparent rounded-lg shadow hover:bg-transparent hover:text-black hover:border-black transition ease-in-out duration-200">
           Read More
         </button>
       </Link>
@@ -195,7 +194,7 @@ function TeamsSection({ page }) {
   return (
     <div className="bg-gray-100 p-6 md:p-12">
       <div className="text-center mt-10 mb-12 md:mb-20">
-        <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Meet Our Teams</h1>
+        <h1 className="gradient-text text-5xl md:text-8xl font-bold mb-6 md:mb-10">Meet The Team</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-10">
         {teamMembers.map((member, index) => (
@@ -208,8 +207,8 @@ function TeamsSection({ page }) {
               className="rounded-full mx-auto mb-2"
             />
             <div className="text-center">
-              <span className="block font-semibold">{`${member.name.first} ${member.name.last}`}</span>
-              <span className="block text-gray-600">{jobPositions[index]}</span>
+              <span className="block font-semibold text-gray-800 mt-8">{`${member.name.first} ${member.name.last}`}</span>
+              <span className="block text-gray-600 mt-2">{jobPositions[index]}</span>
             </div>
           </div>
         ))}
@@ -223,28 +222,39 @@ function TeamsSection({ page }) {
   );
 }
 
-// Component for Customer Testimony section
+
 function TestimonySection() {
+  const [testimonyNames, setTestimonyNames] = useState([]);
+
+  useEffect(() => {
+    const fetchTestimonyNames = async () => {
+      try {
+        const response = await axios.get('https://randomuser.me/api/?results=5');
+        const names = response.data.results.map(user => user.name.first);
+        setTestimonyNames(names);
+      } catch (error) {
+        console.error('Error fetching team members:', error);
+      }
+    };
+
+    fetchTestimonyNames();
+  }, []);
+
   const testimonies = [
     {
-      quote: "The custom keyboard I purchased from your company exceeded my expectations. The build quality is exceptional, and typing feels effortless.",
-      name: 'Jessyln',
+      quote: "The custom keyboard I purchased from your company exceeded my expectations. The build quality is exceptional, and typing feels effortless."
     },
     {
-      quote: "I'm amazed by the personalized service I received. The team helped me choose the perfect keyboard and provided excellent support throughout.",
-      name: 'Patrick',
+      quote: "I'm amazed by the personalized service I received. The team helped me choose the perfect keyboard and provided excellent support throughout."
     },
     {
-      quote: "Using your custom keyboard has transformed my productivity. The ergonomic design and tactile feedback make typing a joy.",
-      name: 'Matthew',
+      quote: "Using your custom keyboard has transformed my productivity. The ergonomic design and tactile feedback make typing a joy."
     },
     {
-      quote: "I've been a customer for years, and I continue to be impressed by your commitment to innovation. Each new keyboard release is better than the last.",
-      name: 'Cynthia',
+      quote: "I've been a customer for years, and I continue to be impressed by your commitment to innovation. Each new keyboard release is better than the last."
     },
     {
-      quote: "The durability of your keyboards is unmatched. Mine has lasted for years without any issues, proving its superior craftsmanship.",
-      name: 'Pomi',
+      quote: "The durability of your keyboards is unmatched. Mine has lasted for years without any issues, proving its superior craftsmanship."
     },
   ];
 
@@ -257,8 +267,10 @@ function TestimonySection() {
         {testimonies.map((item, index) => (
           <div key={index} className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
             <div className="bg-white shadow-lg p-6 rounded-lg">
-              <p className="text-lg mb-4">{item.quote}</p>
-              <p className="text-md font-bold">- {item.name}</p>
+              <p className="text-lg mb-4 text-gray-700">{`‘‘ ${item.quote} ’’`}</p>
+              <p className="text-md font-bold text-gray-800">
+                - {testimonyNames[index] ? testimonyNames[index] : ''}
+              </p>  
             </div>
           </div>
         ))}

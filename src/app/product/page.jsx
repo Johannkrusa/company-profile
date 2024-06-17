@@ -114,26 +114,39 @@ export default function ProductPage() {
 
     return (
         <div className="flex bg-gray-100 min-h-screen">
-            <div className="w-1/5 p-4 m-10">
-                <h2 className="text-lg font-bold mb-4">Filters</h2>
-                <div className="flex flex-col space-y-2">
-                    <button onClick={() => setSelectedCategory('all')} className="px-4 py-2 bg-gray-200 rounded text-left">
-                        All
-                    </button>
-                    <button onClick={() => setSelectedCategory('keyboard')} className="px-4 py-2 bg-gray-200 rounded text-left">
-                        Keyboard Kits
-                    </button>
-                    <button onClick={() => setSelectedCategory('keycaps')} className="px-4 py-2 bg-gray-200 rounded text-left">
-                        Keycaps
-                    </button>
-                    <button onClick={() => setSelectedCategory('switches')} className="px-4 py-2 bg-gray-200 rounded text-left">
-                        Switches
-                    </button>
+            <div className="w-1/5 p-4 m-10 text-gray-600">
+                <h2 className="text-lg font-bold mb-">Filters</h2>
+                <div className="flex flex-col space-y-4">
+                <button
+                    onClick={() => setSelectedCategory('all')}
+                    className="mt-4 px-4 py-2 bg-white rounded text-left shadow-lg border-transparent hover:border-gray-700 hover:border"
+                >
+                    All
+                </button>
+                <button
+                    onClick={() => setSelectedCategory('keyboard')}
+                    className="mt-4 px-4 py-2 bg-white rounded text-left shadow-lg border-transparent hover:border-gray-700 hover:border"
+                >
+                    Keyboard Kits
+                </button>
+                <button
+                    onClick={() => setSelectedCategory('keycaps')}
+                    className="mt-4 px-4 py-2 bg-white rounded text-left shadow-lg border-transparent hover:border-gray-700 hover:border"
+                >
+                    Keycaps
+                </button>
+                <button
+                    onClick={() => setSelectedCategory('switches')}
+                    className="mt-4 px-4 py-2 bg-white rounded text-left shadow-lg border-transparent hover:border-gray-700 hover:border"
+                >
+                    Switches
+                </button>
                 </div>
+
             </div>
             <div className="w-4/5 p-4 m-10">
                 <div className="flex justify-center mb-6">
-                    <h1 className="text-2xl font-bold">Our Products</h1>
+                    <h1 className="text-2xl font-bold text-gray-600">Our Products</h1>
                 </div>
                 <motion.div
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
@@ -155,7 +168,7 @@ export default function ProductPage() {
                                 height={400}
                             />
                             <div className="p-4">
-                                <div className="font-semibold">{product.name}</div>
+                                <div className="font-semibold text-gray-600">{product.name}</div>
                                 <div className="text-gray-600">${product.prices ?? product.price}.00</div>
                             </div>
                         </motion.div>
