@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
-import HeroCarousel from '../components/heroCarousel';
+import HeroCarousel from './components/heroCarousel';
 import Image from 'next/image';
-import './page.css';
+import './page.css'
 
 
 export default function Home() {
